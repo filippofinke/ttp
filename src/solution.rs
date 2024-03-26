@@ -48,6 +48,7 @@ impl Solution {
         format!("{:?}\n{:?}\n", tour_out, packing_out)
     }
 
+    #[allow(dead_code)]
     pub fn write_result(&self, title: &str) {
         if let Ok(mut file) = File::create(title) {
             if let Err(e) = file.write_all(self.answer().as_bytes()) {
