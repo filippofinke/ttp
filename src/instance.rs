@@ -4,6 +4,7 @@
  * Copyright (c) 2024 Filippo Finke
  */
 
+use std::fmt::Display;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::path::Path;
@@ -21,6 +22,36 @@ pub struct Instance {
     pub edge_weight_type: String,
     pub node_coords: Vec<(usize, f64, f64)>,
     pub items: Vec<(usize, f64, f64, usize)>,
+}
+
+impl Display for Instance {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "Instance: {}\n\
+            Knapsack data type: {}\n\
+            Dimension: {}\n\
+            Number of items: {}\n\
+            Capacity of knapsack: {}\n\
+            Min speed: {}\n\
+            Max speed: {}\n\
+            Renting ratio: {}\n\
+            Edge weight type: {}\n\
+            Node coords: {:?}\n\
+            Items: {:?}",
+            self.problem_name,
+            self.knapsack_data_type,
+            self.dimension,
+            self.num_items,
+            self.capacity_of_knapsack,
+            self.min_speed,
+            self.max_speed,
+            self.renting_ratio,
+            self.edge_weight_type,
+            self.node_coords.len(),
+            self.items.len()
+        )
+    }
 }
 
 impl Instance {

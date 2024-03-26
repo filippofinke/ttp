@@ -4,6 +4,7 @@
  * Copyright (c) 2024 Filippo Finke
  */
 
+use std::fmt::Display;
 use std::fs::File;
 use std::io::Write;
 
@@ -18,6 +19,32 @@ pub struct Solution {
     pub wend: f64,
     pub wend_used: f64,
     pub computation_time: u64,
+}
+
+impl Display for Solution {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "TSP Tour: {:?}\n\
+            Packing Plan: {:?}\n\
+            FP: {}\n\
+            FT: {}\n\
+            FTRaw: {}\n\
+            OB: {}\n\
+            WEnd: {}\n\
+            WEnd Used: {}\n\
+            Computation Time: {}",
+            self.tsp_tour,
+            self.packing_plan,
+            self.fp,
+            self.ft,
+            self.ftraw,
+            self.ob,
+            self.wend,
+            self.wend_used,
+            self.computation_time
+        )
+    }
 }
 
 impl Solution {

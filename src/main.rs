@@ -16,10 +16,10 @@ fn main() {
     let instance = Instance::load("./instances/a280_n279_bounded-strongly-corr_01.ttp")
         .expect("Failed to load instance");
 
-    println!("Instance: {:?}", instance.problem_name);
-    println!("Number of cities: {:?}", instance.dimension);
+    println!("{}\n", instance);
+    println!("Solutions: ");
     let solutions = SimpleHeuristic.solve(&instance);
     for solution in solutions {
-        print!("{:?}", solution);
+        print!("{}", solution);
     }
 }
