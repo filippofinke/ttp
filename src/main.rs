@@ -8,7 +8,7 @@ struct Instance {
     knapsack_data_type: String,
     dimension: usize,
     num_items: usize,
-    capacity_of_knapsack: usize,
+    capacity_of_knapsack: f64,
     min_speed: f64,
     max_speed: f64,
     renting_ratio: f64,
@@ -16,6 +16,8 @@ struct Instance {
     node_coords: Vec<(usize, f64, f64)>,
     items: Vec<(usize, f64, f64, usize)>,
 }
+
+fn solve_traveling_thief(instance: &Instance) {}
 
 fn parse_instance(file_path: &str) -> Option<Instance> {
     let file = match File::open(Path::new(file_path)) {
@@ -28,7 +30,7 @@ fn parse_instance(file_path: &str) -> Option<Instance> {
         knapsack_data_type: String::new(),
         dimension: 0,
         num_items: 0,
-        capacity_of_knapsack: 0,
+        capacity_of_knapsack: 0.0,
         min_speed: 0.0,
         max_speed: 0.0,
         renting_ratio: 0.0,
@@ -93,7 +95,7 @@ fn parse_instance(file_path: &str) -> Option<Instance> {
             "KNAPSACK DATA TYPE" => instance.knapsack_data_type = value.to_string(),
             "DIMENSION" => instance.dimension = value.parse().unwrap_or(0),
             "NUMBER OF ITEMS" => instance.num_items = value.parse().unwrap_or(0),
-            "CAPACITY OF KNAPSACK" => instance.capacity_of_knapsack = value.parse().unwrap_or(0),
+            "CAPACITY OF KNAPSACK" => instance.capacity_of_knapsack = value.parse().unwrap_or(0.0),
             "MIN SPEED" => instance.min_speed = value.parse().unwrap_or(0.0),
             "MAX SPEED" => instance.max_speed = value.parse().unwrap_or(0.0),
             "RENTING RATIO" => instance.renting_ratio = value.parse().unwrap_or(0.0),
@@ -110,7 +112,7 @@ fn parse_instance(file_path: &str) -> Option<Instance> {
 fn main() {
     match parse_instance("./instances/a280_n279_bounded-strongly-corr_01.ttp") {
         Some(instance) => {
-            println!("{:?}", instance);
+            solve_traveling_thief(&instance);
         }
         None => {
             println!("Failed to parse instance");
