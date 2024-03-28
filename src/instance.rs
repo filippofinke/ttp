@@ -20,7 +20,7 @@ pub struct Instance {
     pub max_speed: f64,
     pub renting_ratio: f64,
     pub edge_weight_type: String,
-    pub node_coords: Vec<(usize, f64, f64)>,
+    pub node_coords: Vec<(i32, i32, i32)>,
     pub items: Vec<(usize, f64, f64, usize)>,
 }
 
@@ -101,8 +101,8 @@ impl Instance {
                 let node_info: Vec<&str> = line.split_whitespace().collect();
                 if node_info.len() == 3 {
                     let index = node_info[0].parse().unwrap_or(0);
-                    let x = node_info[1].parse().unwrap_or(0.0);
-                    let y = node_info[2].parse().unwrap_or(0.0);
+                    let x = node_info[1].parse().unwrap_or(0);
+                    let y = node_info[2].parse().unwrap_or(0);
                     instance.node_coords.push((index, x, y));
                 }
             } else if section == "ITEMS" {

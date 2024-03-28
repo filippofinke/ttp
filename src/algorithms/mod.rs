@@ -4,5 +4,4 @@
  * Copyright (c) 2024 Filippo Finke
  */
 
-pub mod algorithm;
-pub mod simple_heuristic;
+pub mod tsp;

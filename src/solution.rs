@@ -14,11 +14,11 @@ pub struct Solution {
     pub packing_plan: Vec<usize>,
     pub fp: f64,
     pub ft: f64,
-    pub ftraw: u64,
+    pub ftraw: f64,
     pub ob: f64,
     pub wend: f64,
     pub wend_used: f64,
-    pub computation_time: u64,
+    pub computation_time: f64,
 }
 
 impl Display for Solution {

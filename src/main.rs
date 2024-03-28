@@ -6,20 +6,20 @@
 
 use instance::Instance;
 
-use crate::algorithms::{algorithm::Algorithm, simple_heuristic::SimpleHeuristic};
+use crate::{algorithms::tsp::brute_force::BruteForceTSP, models::path::Path};
 
 mod algorithms;
 mod instance;
+mod models;
 mod solution;
 
 fn main() {
-    let instance = Instance::load("./instances/a280_n279_bounded-strongly-corr_01.ttp")
-        .expect("Failed to load instance");
+    let instance = Instance::load("./instances/test.ttp").expect("Failed to load instance");
 
     println!("{}\n", instance);
-    println!("Solutions: ");
-    let solutions = SimpleHeuristic.solve(&instance);
-    for solution in solutions {
-        print!("{}", solution);
-    }
+
+    let path = Path::new(instance.node_coords);
+    println!("Initial path length: {}", path.length());
+    let shortest_path = BruteForceTSP::solve(&path);
+    println!("Shortest path length: {}", shortest_path.length());
 }
