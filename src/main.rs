@@ -5,9 +5,9 @@
  */
 use crate::{
     algorithms::tsp::{
-        brute_force::BruteForceTSP, nearest_insertion::NearestInsertionTSP,
-        nearest_neighbor::NearestNeighborTSP, simulated_annealing::SimulatedAnnealingTSP,
-        tabu_search::TabuSearchTSB, two_opt::TwoOpt,
+        brute_force::BruteForceTSP, lin_kernighan::LinKernighanTSP,
+        nearest_insertion::NearestInsertionTSP, nearest_neighbor::NearestNeighborTSP,
+        simulated_annealing::SimulatedAnnealingTSP, tabu_search::TabuSearchTSB, two_opt::TwoOpt,
     },
     models::path::Path,
 };
@@ -91,5 +91,11 @@ fn main() {
     let path = Path::new(instance.node_coords.clone());
     println!("Initial path length: {}", path.length());
     let shortest_path = TabuSearchTSB::solve(&path);
+    println!("Shortest path length: {}", shortest_path.length());
+
+    println!("\nLin-Kernighan TSP");
+    let path = Path::new(instance.node_coords.clone());
+    println!("Initial path length: {}", path.length());
+    let shortest_path = LinKernighanTSP::solve(&path);
     println!("Shortest path length: {}", shortest_path.length());
 }
