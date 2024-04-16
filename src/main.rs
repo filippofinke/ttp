@@ -69,56 +69,45 @@ fn main() {
         .interact()
         .expect("Failed to select an algorithm");
 
+    let path = Path::new(instance.node_coords.clone());
+    println!("Initial path length: {}", path.length());
+    let mut shortest_path: Option<Path> = None;
+
     match algorithm_selection {
         0 => {
             println!("Brute force TSP");
-            let path = Path::new(instance.node_coords.clone());
-            println!("Initial path length: {}", path.length());
-            let shortest_path = BruteForceTSP::solve(&path);
-            println!("Shortest path length: {}", shortest_path.length());
+            shortest_path = Some(BruteForceTSP::solve(&path));
         }
         1 => {
             println!("Nearest neighbor TSP");
-            let path = Path::new(instance.node_coords.clone());
-            println!("Initial path length: {}", path.length());
-            let shortest_path = NearestNeighborTSP::solve(&path);
-            println!("Shortest path length: {}", shortest_path.length());
+            shortest_path = Some(NearestNeighborTSP::solve(&path));
         }
         2 => {
             println!("Nearest insertion TSP");
-            let path = Path::new(instance.node_coords.clone());
-            println!("Initial path length: {}", path.length());
-            let shortest_path = NearestInsertionTSP::solve(&path);
-            println!("Shortest path length: {}", shortest_path.length());
+            shortest_path = Some(NearestInsertionTSP::solve(&path));
         }
         3 => {
             println!("Two opt TSP");
-            let path = Path::new(instance.node_coords.clone());
-            println!("Initial path length: {}", path.length());
-            let shortest_path = TwoOpt::solve(&path);
-            println!("Shortest path length: {}", shortest_path.length());
+            shortest_path = Some(TwoOpt::solve(&path));
         }
         4 => {
             println!("Simulated annealing TSP");
-            let path = Path::new(instance.node_coords.clone());
-            println!("Initial path length: {}", path.length());
-            let shortest_path = SimulatedAnnealingTSP::solve(&path);
-            println!("Shortest path length: {}", shortest_path.length());
+            shortest_path = Some(SimulatedAnnealingTSP::solve(&path));
         }
         5 => {
             println!("Tabu search TSP");
-            let path = Path::new(instance.node_coords.clone());
-            println!("Initial path length: {}", path.length());
-            let shortest_path = TabuSearchTSB::solve(&path);
-            println!("Shortest path length: {}", shortest_path.length());
+            shortest_path = Some(TabuSearchTSB::solve(&path));
         }
         6 => {
             println!("Lin-Kernighan TSP");
-            let path = Path::new(instance.node_coords.clone());
-            println!("Initial path length: {}", path.length());
-            let shortest_path = LinKernighanTSP::solve(&path);
-            println!("Shortest path length: {}", shortest_path.length());
+            shortest_path = Some(LinKernighanTSP::solve(&path));
         }
         _ => println!("Invalid selection"),
+    }
+
+    if let Some(shortest_path) = shortest_path {
+        println!("Shortest path length: {}", shortest_path.length());
+    } else {
+        println!("Failed to find the shortest path");
     }
 }
