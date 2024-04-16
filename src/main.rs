@@ -56,46 +56,69 @@ fn main() {
 
     println!("{}\n", instance);
 
-    /*println!("Brute force TSP");
-        let path = Path::new(instance.node_coords.clone());
-        println!("Initial path length: {}", path.length());
-        let shortest_path = BruteForceTSP::solve(&path);
-        println!("Shortest path length: {}", shortest_path.length());
-    */
+    let algorithm_selection = Select::with_theme(&ColorfulTheme::default())
+        .with_prompt("Select an algorithm")
+        .item("Brute force TSP")
+        .item("Nearest neighbor TSP")
+        .item("Nearest insertion TSP")
+        .item("Two opt TSP")
+        .item("Simulated annealing TSP")
+        .item("Tabu search TSP")
+        .item("Lin-Kernighan TSP")
+        .default(0)
+        .interact()
+        .expect("Failed to select an algorithm");
 
-    println!("\nNearest neighbor TSP");
-    let path = Path::new(instance.node_coords.clone());
-    println!("Initial path length: {}", path.length());
-    let shortest_path = NearestNeighborTSP::solve(&path);
-    println!("Shortest path length: {}", shortest_path.length());
-
-    println!("\nNearest insertion TSP");
-    let path = Path::new(instance.node_coords.clone());
-    println!("Initial path length: {}", path.length());
-    let shortest_path = NearestInsertionTSP::solve(&path);
-    println!("Shortest path length: {}", shortest_path.length());
-
-    println!("\nTwo opt TSP");
-    let path = Path::new(instance.node_coords.clone());
-    println!("Initial path length: {}", path.length());
-    let shortest_path = TwoOpt::solve(&path);
-    println!("Shortest path length: {}", shortest_path.length());
-
-    println!("\nSimulated annealing TSP");
-    let path = Path::new(instance.node_coords.clone());
-    println!("Initial path length: {}", path.length());
-    let shortest_path = SimulatedAnnealingTSP::solve(&path);
-    println!("Shortest path length: {}", shortest_path.length());
-
-    println!("\nTabu search TSP");
-    let path = Path::new(instance.node_coords.clone());
-    println!("Initial path length: {}", path.length());
-    let shortest_path = TabuSearchTSB::solve(&path);
-    println!("Shortest path length: {}", shortest_path.length());
-
-    println!("\nLin-Kernighan TSP");
-    let path = Path::new(instance.node_coords.clone());
-    println!("Initial path length: {}", path.length());
-    let shortest_path = LinKernighanTSP::solve(&path);
-    println!("Shortest path length: {}", shortest_path.length());
+    match algorithm_selection {
+        0 => {
+            println!("Brute force TSP");
+            let path = Path::new(instance.node_coords.clone());
+            println!("Initial path length: {}", path.length());
+            let shortest_path = BruteForceTSP::solve(&path);
+            println!("Shortest path length: {}", shortest_path.length());
+        }
+        1 => {
+            println!("Nearest neighbor TSP");
+            let path = Path::new(instance.node_coords.clone());
+            println!("Initial path length: {}", path.length());
+            let shortest_path = NearestNeighborTSP::solve(&path);
+            println!("Shortest path length: {}", shortest_path.length());
+        }
+        2 => {
+            println!("Nearest insertion TSP");
+            let path = Path::new(instance.node_coords.clone());
+            println!("Initial path length: {}", path.length());
+            let shortest_path = NearestInsertionTSP::solve(&path);
+            println!("Shortest path length: {}", shortest_path.length());
+        }
+        3 => {
+            println!("Two opt TSP");
+            let path = Path::new(instance.node_coords.clone());
+            println!("Initial path length: {}", path.length());
+            let shortest_path = TwoOpt::solve(&path);
+            println!("Shortest path length: {}", shortest_path.length());
+        }
+        4 => {
+            println!("Simulated annealing TSP");
+            let path = Path::new(instance.node_coords.clone());
+            println!("Initial path length: {}", path.length());
+            let shortest_path = SimulatedAnnealingTSP::solve(&path);
+            println!("Shortest path length: {}", shortest_path.length());
+        }
+        5 => {
+            println!("Tabu search TSP");
+            let path = Path::new(instance.node_coords.clone());
+            println!("Initial path length: {}", path.length());
+            let shortest_path = TabuSearchTSB::solve(&path);
+            println!("Shortest path length: {}", shortest_path.length());
+        }
+        6 => {
+            println!("Lin-Kernighan TSP");
+            let path = Path::new(instance.node_coords.clone());
+            println!("Initial path length: {}", path.length());
+            let shortest_path = LinKernighanTSP::solve(&path);
+            println!("Shortest path length: {}", shortest_path.length());
+        }
+        _ => println!("Invalid selection"),
+    }
 }
