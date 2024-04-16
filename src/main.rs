@@ -9,16 +9,13 @@ use crate::{
         nearest_insertion::NearestInsertionTSP, nearest_neighbor::NearestNeighborTSP,
         simulated_annealing::SimulatedAnnealingTSP, tabu_search::TabuSearchTSB, two_opt::TwoOpt,
     },
-    models::path::Path,
+    models::{instance::Instance, path::Path},
 };
 use dialoguer::{theme::ColorfulTheme, Select};
-use instance::Instance;
 use std::fs;
 
 mod algorithms;
-mod instance;
 mod models;
-mod solution;
 
 fn main() {
     // List all the files in the instances folder
