@@ -1,1 +1,1 @@
-pub mod random_local_search;
+pub mod random;

@@ -4,10 +4,14 @@
  * Copyright (c) 2024 Filippo Finke
  */
 use crate::{
-    algorithms::tsp::{
-        brute_force::BruteForceTSP, lin_kernighan::LinKernighanTSP,
-        nearest_insertion::NearestInsertionTSP, nearest_neighbor::NearestNeighborTSP,
-        simulated_annealing::SimulatedAnnealingTSP, tabu_search::TabuSearchTSB, two_opt::TwoOpt,
+    algorithms::{
+        kp::random::RandomKP,
+        tsp::{
+            brute_force::BruteForceTSP, lin_kernighan::LinKernighanTSP,
+            nearest_insertion::NearestInsertionTSP, nearest_neighbor::NearestNeighborTSP,
+            simulated_annealing::SimulatedAnnealingTSP, tabu_search::TabuSearchTSB,
+            two_opt::TwoOpt,
+        },
     },
     models::{instance::Instance, path::Path},
 };
@@ -107,4 +111,8 @@ fn main() {
     } else {
         println!("Failed to find the shortest path");
     }
+
+    let solution = RandomKP::solve(&path, &instance);
+
+    println!("Profit: {}", solution);
 }

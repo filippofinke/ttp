@@ -8,6 +8,10 @@ impl Path {
         Path { nodes }
     }
 
+    pub fn has_node(&self, node: i32) -> bool {
+        self.nodes.iter().any(|(n, _, _)| *n == node)
+    }
+
     pub fn length(&self) -> f64 {
         let mut len = 0.0;
         for i in 0..(self.nodes.len() - 1) {
