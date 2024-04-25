@@ -108,11 +108,10 @@ fn main() {
 
     if let Some(shortest_path) = shortest_path {
         println!("Shortest path length: {}", shortest_path.length());
+
+        let solution = RandomKP::solve(&shortest_path, &instance);
+        println!("Profit: {}", solution);
     } else {
         println!("Failed to find the shortest path");
     }
-
-    let solution = RandomKP::solve(&path, &instance);
-
-    println!("Profit: {}", solution);
 }
