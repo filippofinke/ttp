@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Filippo Finke
+ */
+
 pub mod brute_force;
 pub mod lin_kernighan;
 pub mod nearest_insertion;

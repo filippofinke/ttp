@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Filippo Finke
+ */
+
 use rand::{thread_rng, Rng};
 use std::f64;
 

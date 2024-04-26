@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Filippo Finke
+ */
+
 use crate::{
     algorithms::{
         kp::random::RandomKP,

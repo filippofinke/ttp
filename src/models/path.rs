@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Filippo Finke
+ */
+
 #[derive(Clone, Debug, Eq, PartialEq, Hash)]
 pub struct Path {
     pub nodes: Vec<(i32, i32, i32)>,

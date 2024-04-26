@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Filippo Finke
+ */
+
 use std::fmt::Display;
 use std::fs::File;
 use std::io::{BufRead, BufReader};

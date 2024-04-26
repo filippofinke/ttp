@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Filippo Finke
+ */
+
 use std::collections::HashSet;
 
 use crate::models::path::Path;
