@@ -1,11 +1,17 @@
 /*
- * Copyright (c) 2024 Filippo Finke
+ * Copyright (c) 2024 Filippo Finke and Walter Sostene Losa
  */
 
 use crate::models::path::Path;
 
 pub struct NearestInsertionTSP;
 
+/**
+ * Nearest Insertion TSP algorithm.
+ * Not sure about the implementation, it was just an experiment.
+ *
+ * Find the nearest node to the current path and insert it in the best position.
+ */
 impl NearestInsertionTSP {
     pub fn solve(path: &Path) -> Path {
         let mut unvisited = path.nodes.clone();

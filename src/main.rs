@@ -7,9 +7,8 @@ use crate::{
         kp::random::RandomKP,
         tsp::{
             brute_force::BruteForceTSP, lin_kernighan::LinKernighanTSP,
-            nearest_insertion::NearestInsertionTSP, nearest_neighbor::NearestNeighborTSP,
-            simulated_annealing::SimulatedAnnealingTSP, tabu_search::TabuSearchTSB,
-            two_opt::TwoOpt,
+            nearest_insertion::NearestInsertionTSP, simulated_annealing::SimulatedAnnealingTSP,
+            tabu_search::TabuSearchTSB, two_opt::TwoOpt,
         },
     },
     models::{instance::Instance, path::Path},
@@ -59,7 +58,6 @@ fn main() {
     let algorithm_selection = Select::with_theme(&ColorfulTheme::default())
         .with_prompt("Select an algorithm")
         .item("Brute force TSP")
-        .item("Nearest neighbor TSP")
         .item("Nearest insertion TSP")
         .item("Two opt TSP")
         .item("Simulated annealing TSP")
@@ -79,26 +77,22 @@ fn main() {
             shortest_path = Some(BruteForceTSP::solve(&path));
         }
         1 => {
-            println!("Nearest neighbor TSP");
-            shortest_path = Some(NearestNeighborTSP::solve(&path));
-        }
-        2 => {
             println!("Nearest insertion TSP");
             shortest_path = Some(NearestInsertionTSP::solve(&path));
         }
-        3 => {
+        2 => {
             println!("Two opt TSP");
             shortest_path = Some(TwoOpt::solve(&path));
         }
-        4 => {
+        3 => {
             println!("Simulated annealing TSP");
             shortest_path = Some(SimulatedAnnealingTSP::solve(&path));
         }
-        5 => {
+        4 => {
             println!("Tabu search TSP");
             shortest_path = Some(TabuSearchTSB::solve(&path));
         }
-        6 => {
+        5 => {
             println!("Lin-Kernighan TSP");
             shortest_path = Some(LinKernighanTSP::solve(&path));
         }

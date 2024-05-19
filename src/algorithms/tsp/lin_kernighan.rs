@@ -1,10 +1,16 @@
 /*
- * Copyright (c) 2024 Filippo Finke
+ * Copyright (c) 2024 Filippo Finke and Walter Sostene Losa
  */
 
 use crate::models::path::Path;
 
 pub struct LinKernighanTSP;
+
+/**
+ * Lin-Kernighan TSP algorithm.
+ *
+ * Tried to implement the Lin-Kernighan algorithm, but not sure if it's correct.
+ */
 
 impl LinKernighanTSP {
     pub fn solve(path: &Path) -> Path {

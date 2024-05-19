@@ -31,7 +31,6 @@ https://github.com/filippofinke/ttp/assets/37296364/b6fbf954-242b-4935-8056-e048
 - [x] Brute Force
 - [x] Tabu Search
 - [x] Two Opt
-- [x] Nearest Neighbour
 - [x] Nearest Insertion
 - [x] Simulated Annealing
 - [x] Lin kernighan

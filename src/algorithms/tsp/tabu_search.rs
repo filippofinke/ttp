@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Filippo Finke
+ * Copyright (c) 2024 Filippo Finke and Walter Sostene Losa
  */
 
 use std::collections::HashSet;
@@ -7,6 +7,12 @@ use std::collections::HashSet;
 use crate::models::path::Path;
 
 pub struct TabuSearchTSB;
+
+/**
+ * Tabu search algorithm for the TSP problem.
+ * Generate neighbors of the current path and select the best one.
+ * Keep track of the best solution found so far and avoid visiting the same path twice.
+ */
 
 impl TabuSearchTSB {
     pub fn solve(path: &Path) -> Path {

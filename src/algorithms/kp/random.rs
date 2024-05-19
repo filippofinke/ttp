@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Filippo Finke
+ * Copyright (c) 2024 Filippo Finke and Walter Sostene Losa
  */
 
 use rand::{thread_rng, Rng};
@@ -8,6 +8,9 @@ use crate::models::{instance::Instance, path::Path};
 
 pub struct RandomKP;
 
+/**
+ * RandomKP is a simple algorithm that generates a random solution for the knapsack problem.
+ */
 impl RandomKP {
     pub fn solve(path: &Path, instance: &Instance) -> f64 {
         let mut items: Vec<(f64, f64)> = vec![];

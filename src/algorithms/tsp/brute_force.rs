@@ -1,11 +1,12 @@
 /*
- * Copyright (c) 2024 Filippo Finke
+ * Copyright (c) 2024 Filippo Finke and Walter Sostene Losa
  */
 
 use crate::models::path::Path;
 
 pub struct BruteForceTSP;
 
+// Helper function to generate all the possible permutations of the nodes.
 fn permute(nodes: &mut Vec<(i32, i32, i32)>, start: usize, result: &mut Vec<Vec<(i32, i32, i32)>>) {
     if start == nodes.len() {
         result.push(nodes.clone());
@@ -18,6 +19,10 @@ fn permute(nodes: &mut Vec<(i32, i32, i32)>, start: usize, result: &mut Vec<Vec<
     }
 }
 
+/**
+ * Brute force algorithm for the TSP problem.
+ * Try all the possible permutations of the nodes and return the shortest path.
+ */
 impl BruteForceTSP {
     pub fn solve(path: &Path) -> Path {
         let mut path = path.clone();

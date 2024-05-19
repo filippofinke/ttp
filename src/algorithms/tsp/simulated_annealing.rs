@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Filippo Finke
+ * Copyright (c) 2024 Filippo Finke and Walter Sostene Losa
  */
 
 use rand::{thread_rng, Rng};
@@ -9,6 +9,9 @@ use crate::models::path::Path;
 
 pub struct SimulatedAnnealingTSP;
 
+/**
+ * Simulated annealing algorithm for the TSP problem.
+ */
 impl SimulatedAnnealingTSP {
     pub fn solve(path: &Path) -> Path {
         let mut rng = thread_rng();
