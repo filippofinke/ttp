@@ -1,10 +1,101 @@
-# Traveling Thief Problem - Gecco 2024
+<div align="center">
+  <h3 align="center">Traveling Thief Problem - Gecco 2024</h3>
 
-## Introduction
+  <p align="center">
+    An attempt to solve the Traveling Thief Problem for the GECCO 2024 competition.
+    <br />
+    <a href="https://github.com/filippofinke/ttp"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/filippofinke/ttp/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/filippofinke/ttp/issues">Request Feature</a>
+  </p>
+</div>
 
-The Traveling Thief Problem is defined as follows. Given is a set of cities $ N = \{1, . . . , n\} $ for which a distance $ d*{ij} $, $ i, j \in N $ between any pair of cities is known. Every city $ i $ but the first contains a set of items $ M_i = \{1, . . . , m_i\} $. Each item $ k $ positioned in the city $ i $ is characterized by its value $ p*{ik} $ and weight $ w*{ik} $, $ I_i \sim (p*{ik}, w*{ik}) $. The thief must visit each of the cities exactly once starting from the first city and returning back to it in the end. Any item may be picked up into the knapsack in any city until the total weight of collected items does not exceed the maximum possible weight $ W $. A renting rate $ R $ is to be paid per each time unit being on a way. $ \nu*{\text{max}} $ and $ \nu\_{\text{min}} $ denote the maximal and minimum speeds that the thief can move, respectively. The goal is to find a tour of the maximal profit.
+## About The Project
 
-## Authors
+This project is an attempt to solve the Traveling Thief Problem for the GECCO 2024 competition.  
+The Traveling Thief Problem (TTP) is a combination of the Traveling Salesman Problem (TSP) and the Knapsack Problem (KP).
 
-- [Filippo Finke](https://github.com/filippofinke)
-- [Walter Sostene Losa](https://github.com/enetsos)
+<details>
+    <summary>Demo</summary>
+    <video controls>
+        <source src="./demo/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>    
+</details>
+
+## Algorithms
+
+### TSP
+
+- [x] Brute Force
+- [x] Tabu Search
+- [x] Two Opt
+- [x] Nearest Neighbour
+- [x] Nearest Insertion
+- [x] Simulated Annealing
+- [x] Lin kernighan
+
+### KP
+
+- [x] Random
+
+## Getting Started
+
+### Installation
+
+1. Clone the repo
+
+   ```sh
+   git clone https://github.com/filippofinke/ttp
+   ```
+
+2. Change directory
+
+   ```sh
+   cd ttp
+   ```
+
+### Usage
+
+```sh
+cargo run --release
+```
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+TTP is released under the MIT License. See the LICENSE file for more details.
+
+## Author
+
+👤 **Filippo Finke**
+
+- Website: https://filippofinke.ch
+- Github: [@filippofinke](https://github.com/filippofinke)
+- LinkedIn: [@filippofinke](https://linkedin.com/in/filippofinke)
+
+👤 **Walter Sostene Losa**
+
+- Github: [@enetsos](https://github.com/enetsos)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+<a href="https://www.buymeacoffee.com/filippofinke">
+  <img src="https://github.com/filippofinke/filippofinke/raw/main/images/buymeacoffe.png" alt="Buy Me A McFlurry">
+</a>
