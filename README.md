@@ -20,10 +20,8 @@ The Traveling Thief Problem (TTP) is a combination of the Traveling Salesman Pro
 
 <details>
     <summary>Demo</summary>
-    <video controls>
-        <source src="./demo/demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>    
+  
+https://github.com/filippofinke/ttp/assets/37296364/b6fbf954-242b-4935-8056-e048c52fbff9
 </details>
 
 ## Algorithms
